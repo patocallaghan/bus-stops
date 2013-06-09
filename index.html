@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+	  html { height: 100% }
+	  body { height: 100%; margin: 0; padding: 0 }
+	  #map-canvas { height: 100% }
+	</style>
+  </head>
+	<body>
+		<div id="map-canvas"/>
+	</body>
+	<script src="js/jquery-1.10.1.js"></script>
+	<script src="js/data.js"></script>
+	<script src="js/map.js"></script>
+	<script type="text/javascript"
+	  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZmTq0cPHGzryvjjl07am2U_sVyl0duAc&sensor=true">
+	</script>
+	<script type="text/javascript">
+		function initialize() {
+			UI.init();
+			Data.get('http://transitpaint.com/stops', 'UI.drawData');
+		}
+		google.maps.event.addDomListener(window, 'load', initialize);
+	</script>
+</html>
